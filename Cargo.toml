@@ -2,9 +2,10 @@
 name = "imgr"
 version = "0.1.0"
 edition = "2021"
-include = ["src/**/*"]
+include = ["**/*.rs", "README.md"]
+repository = "https://github.com/shamxl/imgr"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = "4.4.7"
+clap = {version="4.4.7", features=["derive"]}
 image = "0.24.7"
