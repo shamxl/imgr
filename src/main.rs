@@ -11,10 +11,12 @@ use image::GenericImageView;
 
 fn main() {
 	let config = Config::default();
-	let style = config.style;
-	let img = resize(open_img (filename()));
-	let (width, height) = img.dimensions();
-	let scale = config.scale;
+	let img = if config.resize {
+		resize(open_img(filename()))
+	} else {
+		open_img (filename()).into_rgba8()
+	};
 	
-	imgops::print_img(img)
+	let config = Config::default();
+	imgops::print_img(img);
 }

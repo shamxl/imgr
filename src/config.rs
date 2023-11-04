@@ -17,12 +17,12 @@ pub struct Config {
 impl Default for Config {
 	fn default () -> Self {
 		Self {
-			ascii: vec![' ', '.', ':', ';', 'j', 'm', 'x', 'k'],
-			scale: 2,
+			ascii: vec![' ', '.', ':', 'o', 'O', '#', '@', '@'],
+			scale: 3,
 			block: std::char::from_u32(9608).unwrap(),
 			colored: true,
 			resize: true,
-			style: Styles::Block
+			style: Styles::Ascii
 		}
 	}
 }
