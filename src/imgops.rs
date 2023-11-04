@@ -2,12 +2,13 @@ use crate::config::{Config, Styles};
 use crate::output;
 use image::{RgbaImage, DynamicImage};
 use image::imageops::FilterType::Lanczos3;
+use clap::Parser;
 
 pub fn resize (img: DynamicImage) -> RgbaImage {
-	let config: Config = Config::default();
+	let config: Config = Config::parse();
 	let scale = config.scale;
-	let width = (img.width() / scale);
-	let height = (img.height() / scale);
+	let width = img.width() / scale;
+	let height = img.height() / scale;
 	let resized_img = img.resize(width, height, Lanczos3);
 	if config.colored { 
 		resized_img.into_rgba8()
@@ -37,7 +38,7 @@ pub fn colored (r: u8, g: u8, b: u8, bchar: char) -> String {
 }
 
 pub fn print_img (img: RgbaImage) {
-	let config = Config::default();
+	let config = Config::parse();
 	let height = img.height();
 	let width = img.width();
 	let scale = config.scale;

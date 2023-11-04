@@ -2,21 +2,21 @@ mod fileops;
 mod imgops;
 mod config;
 mod output;
-use fileops::filename;
 use fileops::open_img;
 use imgops::resize;
-use imgops::get_luminance;
-use config::{Config, Styles};
-use image::GenericImageView;
+use config::{Config};
+use clap::Parser;
 
 fn main() {
-	let config = Config::default();
+	let config = Config::parse();
 	let img = if config.resize {
-		resize(open_img(filename()))
+		resize(open_img())
 	} else {
-		open_img (filename()).into_rgba8()
+		open_img ().into_rgba8()
 	};
-	
-	let config = Config::default();
+
 	imgops::print_img(img);
+
+
+	
 }
