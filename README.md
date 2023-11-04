@@ -59,13 +59,5 @@ Options:
           Print version
 ```
 
-# Installation
-```command
-$ git clone https://github.com/shamxl/imgr.git
-$ cd imgr
-$ cargo build --release
-$ ..
-```
-
 #### Note
 As I continue my journey with Rust, please pardon any imperfections in this program – they're all part of the learning process.
