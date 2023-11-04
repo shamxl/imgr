@@ -1,6 +1,23 @@
 # imgr
 image to ascii converter written in rust
 
+# Installation
+
+##### cargo
+
+```
+cargo install imgr
+```
+
+##### source
+```command
+git clone https://github.com/shamxl/imgr.git
+
+cd imgr
+
+cargo build --release --path .
+```
+
 # Usage
 
 ```command
