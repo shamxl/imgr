@@ -51,4 +51,4 @@ $ ..
 ```
 
 #### Note
-im still learning rust so there will be some mistakes in this program, sorry
+As I continue my journey with Rust, please pardon any imperfections in this program – they're all part of the learning process.
