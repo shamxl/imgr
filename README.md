@@ -1,63 +1,63 @@
 # imgr
-image to ascii converter written in rust
+
+An image to ascii converter written in rust 🦀
+
+# Usage
+
+```
+imgr [options] <path to image>
+```
+
+# Options
+
+
+## Color
+
+To enable colored output
+
+`-c` or `--colored`
+
+## Styles
+
+To set the style of image
+
+`-s <style>` or `--style <style>`
+
+Available options:
+- ascii (default)
+- block
+- braille (experimental)
+
+## Resize
+
+To enable image resizing
+
+`-r` or `--resize`
+
+**also set the resizing scale using:**
+
+`-S` or `--scale`
+
+default set to: `5`
+
 
 # Installation
 
-##### cargo
+### Cargo
 
 ```
 cargo install imgr
 ```
 
-##### source
-```command
+### From source
+
+```
 git clone https://github.com/shamxl/imgr.git
-
 cd imgr
-
 cargo build --release --path .
 ```
 
-# Usage
+<br>
 
-```command
-Usage: imgr [OPTIONS] <FILENAME>
-
-Arguments:
-  <FILENAME>
-          path of the image
-
-Options:
-  -s, --style <STYLE>
-          [default: ascii]
-
-          Possible values:
-          - ascii:   print as ascii chars
-          - block:   print as block
-          - braille: print as braille - ! Experimental (use with color on)
-
-  -S, --scale <SCALE>
-          to set the scale of image
-
-          [default: 5]
-
-  -c, --colored
-          to set the output color
-
-  -r, --resize
-          to set wheather the image to be resized or not
-
-  -b, --block <BLOCK>
-          to set the char of block style
-
-          [default: █]
-
-  -h, --help
-          Print help (see a summary with '-h')
-
-  -V, --version
-          Print version
-```
-
-#### Note
-As I continue my journey with Rust, please pardon any imperfections in this program – they're all part of the learning process.
+> [!NOTE]
+> As I continue my journey with Rust, please pardon any imperfections in this program – they're all part of the learning process.
