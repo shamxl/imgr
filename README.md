@@ -1,6 +1,6 @@
 # imgr
 
-An image to ascii converter written in rust 🦀
+An image to ascii converter written in rust 
 
 # Usage
 
@@ -38,7 +38,7 @@ To enable image resizing
 
 `-S` or `--scale`
 
-default set to: `5`
+default set to: `2`
 
 
 # Installation
