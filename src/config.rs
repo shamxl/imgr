@@ -11,7 +11,7 @@ pub struct Config {
     pub filename: String,
 
     /// to set the scale of image
-    #[arg(short = 'S', long, default_value = "5")]
+    #[arg(short = 'S', long, default_value = "2")]
     pub scale: u32,
 
     /// to set the output color
