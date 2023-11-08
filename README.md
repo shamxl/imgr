@@ -1,63 +1,56 @@
 # imgr
 
-An image to ascii converter written in rust 
+A rust-powered image-to-ascii converter 
 
-# Usage
+**Usage:**
 
-```
+```bash
 imgr [options] <path to image>
 ```
 
-# Options
+**Options:**
 
+**Color:**
 
-## Color
+- Enable colored output:
+  - `-c` or `--colored`
 
-To enable colored output
+**Styles:**
 
-`-c` or `--colored`
-
-## Styles
-
-To set the style of image
-
-`-s <style>` or `--style <style>`
+- Set the style of the image:
+  - `-s <style>` or `--style <style>`
 
 Available options:
-- ascii (default)
-- block
-- braille (experimental)
+  - ascii (default)
+  - block
+  - braille (experimental)
 
-## Resize
+**Resize:**
 
-To enable image resizing
+- Enable image resizing:
+  - `-r` or `--resize`
 
-`-r` or `--resize`
+- Set the resizing scale:
+  - `-S` or `--scale`
 
-**also set the resizing scale using:**
+Default scale: `2`
 
-`-S` or `--scale`
+## Installation
 
-default set to: `2`
+**Using Cargo:**
 
-
-# Installation
-
-### Cargo
-
-```
+```bash
 cargo install imgr
 ```
 
-### From source
+**From Source:**
 
-```
+```bash
 git clone https://github.com/shamxl/imgr.git
 cd imgr
 cargo build --release --path .
 ```
 
-<br>
+**Note:**
 
-> [!NOTE]
-> As I continue my journey with Rust, please pardon any imperfections in this program – they're all part of the learning process.
+As I continue my journey with Rust, please pardon any imperfections in this program. They're all part of the learning process.
