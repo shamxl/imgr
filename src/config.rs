@@ -25,6 +25,10 @@ pub struct Config {
     /// to set the char of block style
     #[arg(short, long, default_value = "█")]
     pub block: char,
+
+    /// to save output to a text file
+    #[arg(short, long, default_value = "")] 
+    pub output: String
 }
 
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, ValueEnum, Debug)]

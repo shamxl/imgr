@@ -3,6 +3,7 @@ use crate::output;
 use image::{RgbaImage, DynamicImage};
 use image::imageops::FilterType::Lanczos3;
 use clap::Parser;
+use crate::fileops::write_contents;
 
 pub fn resize (img: DynamicImage) -> RgbaImage {
 	let config: Config = Config::parse();
@@ -44,6 +45,10 @@ pub fn print_img (img: RgbaImage) {
 	let scale = config.scale;
 	let style = config.style;
 
+	if !config.output.is_empty() {
+		println! ("Writing to file..., this may take a few moments");
+	}
+
 	for y in 0..height {
 		for x in 0..width {
 			if y % (scale * 2) == 0 && x % scale == 0 {
@@ -58,15 +63,41 @@ pub fn print_img (img: RgbaImage) {
 					luminance = get_luminance(r, g, b);					
 				}
 
+				// this piece of code is not optimised
+				// future updates will make this more readable
 				match style {
-					Styles::Ascii => output::ascii(luminance, pixel),
-					Styles::Block => output::block(pixel),
-					Styles::Braille => output::braille(luminance, pixel)
+					Styles::Ascii => {
+						// output 
+						let out = output::ascii(luminance, pixel);
+						if config.output.is_empty (){
+							print! ("{}", out);
+							
+						} else {
+							write_contents(out, &config.output);
+						}
+					}
+					Styles::Block => {
+						let out = output::block(pixel);
+						if config.output.is_empty() {
+							print! ("{}", out);
+						} else {
+							write_contents(out, &config.output);
+						}
+					}
+					Styles::Braille => {
+						let out = output::braille(luminance, pixel);
+						if config.output.is_empty() {
+							print! ("{}", out);
+						} else {
+							write_contents(out, &config.output);
+						}
+					}
 				}
 			}
 		}
 		if y % (scale * 2) == 0 {
-			println!();
+			write_contents("\n", &config.output);
+
 		}
 	}
 	
