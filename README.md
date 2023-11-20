@@ -35,6 +35,12 @@ Available options:
 
 Default scale: `2`
 
+**Output**
+
+- Write the output to a file instead of printing to terminal
+  - `-o <path to file>` or `--output <path to file>`
+
+
 ## Installation
 
 **Using Cargo:**
