@@ -96,8 +96,12 @@ pub fn print_img (img: RgbaImage) {
 			}
 		}
 		if y % (scale * 2) == 0 {
-			write_contents("\n", &config.output);
-
+			if !config.output.is_empty() {
+				write_contents("\n", &config.output);
+			} else {
+				println!();
+			}
+			
 		}
 	}
 	
